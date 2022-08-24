@@ -198,6 +198,17 @@ class Flatpak(PackageManager):
         """
         return self.build_cli("update", "--noninteractive", package_id)
 
+    def remove(self, package_id: str) -> str:
+        """Removes a package.
+
+        .. code-block:: shell-session
+
+            ► flatpak uninstall <package> 
+            TODO sample output
+            
+        """
+        return self.run_cli("uninstall", package_id)
+
     def cleanup(self) -> None:
         """Removes things we don't need anymore.
 
